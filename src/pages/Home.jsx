@@ -1,29 +1,31 @@
 import React from 'react'
+import styled from 'styled-components'
 import AsideReport from '../components/aside/AsideReport'
 import Header from '../components/header/Header'
+import Navbar from '../components/navbar/Navbar'
 import ListProduct from '../components/product/ListProduct'
 
 const Home = () => {
     return (
-        <div className='container'>
-            <Header />
-            <div className='row pt-5'>
-                <div className='col-md-4'>
-                    <AsideReport />
+        <>
+            <Navbar></Navbar>
+            <main className='container pt-5'>
+                <div className="row">
+                    <div className="col-md-4"><AsideReport /></div>
+                    <div className="col"><ListProduct /></div>
                 </div>
-                <div className=' col-md-8'>
-                   
-                    <ListProduct/>
-
+            </main>
+            <footer class="footer mt-auto py-3 bg-light">
+                <div class="container">
+                    <span class="text-muted">Place sticky footer content here.</span>
                 </div>
-                
-            </div>
+            </footer>
 
+        </>
 
-
-
-        </div>
     )
 }
 
 export default Home
+
+

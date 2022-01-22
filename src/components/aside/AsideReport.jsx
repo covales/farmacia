@@ -86,9 +86,10 @@ const AsideReport = () => {
 
 
     return (
-        <div className='container pt-5 sticky-top'>
+        <div className='sticky-top pt-5'>
+            <p></p>
             <div className="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark">
-                <p href="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                <p className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
 
                     <span className="fs-4">Informes</span>
                 </p>
