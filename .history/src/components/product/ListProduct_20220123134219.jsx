@@ -64,7 +64,7 @@ const ListProduct = () => {
                             <svg className="bd-placeholder-img rounded-circle" width="40" height="40" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#35753e" /><text x="10%" y="50%" fill="#fff" dy=".3em">{producto.pVenta}bs</text></svg>
                             <h6 className='text-primary '>{producto.medicamentoPresentacion}</h6>
                             <p ><b className='me-2'>Stock:</b> {producto.cantidad}<br />
-                                <span className='text-success'> <b> Ubicación: {producto.ubicacion}</b> </span>
+                                <span className='text-'> <b> Ubicación: {producto.ubicacion}</b> </span>
                             </p>                            
 
                         </div>

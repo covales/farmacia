@@ -1,12 +1,12 @@
 import React from 'react'
-import Header from '../components/header/Header';
+import Header from '../header/Header';
 
 const ListClient = () => {
     return (
        <>
        <Header></Header>
-       <main className='row pt-5'>
-           <h3 className='pt-3'>Lista de clientes</h3>
+       <main>
+           <h3>Lista de clientes</h3>
        </main>
        
        </>

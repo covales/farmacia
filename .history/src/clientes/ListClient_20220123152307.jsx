@@ -5,8 +5,8 @@ const ListClient = () => {
     return (
        <>
        <Header></Header>
-       <main className='row pt-5'>
-           <h3 className='pt-3'>Lista de clientes</h3>
+       <main className='row pt-'>
+           <h3>Lista de clientes</h3>
        </main>
        
        </>
