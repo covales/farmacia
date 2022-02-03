@@ -1,7 +1,7 @@
 import React from 'react'
-import Search from '../search/Search'
-import { Link } from "react-router-dom";
-import FormAddProduct from '../product/FormAddProduct';
+import { Link } from "react-router-dom"
+import FormAddProduct from '../product/FormAddProduct'
+import ModalCliente from '../../clientes/ModalCliente'
 
 const Navbar = (props) => {
     return (
@@ -31,9 +31,9 @@ const Navbar = (props) => {
                                 <strong>Pablo</strong>
                             </a>
                             <ul className="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                                <li><a className="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal">Registrar Producto</a></li>
-                                <li><a className="dropdown-item" href="#">Registrar Vendedor</a></li>
-                                <li><a className="dropdown-item" href="#">Registrar Cliente</a></li>
+                                <li><a className="dropdown-item" data-bs-toggle="modal" data-bs-target="#productModal">Registrar Producto</a></li>
+                                <li><a className="dropdown-item" data-bs-toggle="modal" data-bs-target="#vendedorModal">Registrar Vendedor</a></li>
+                                <li><a className="dropdown-item" data-bs-toggle="modal" data-bs-target="#clientModal">Registrar Cliente</a></li>
                                 <li><hr className="dropdown-divider" /></li>
                                 <li><a className="dropdown-item" href="#">Salir</a></li>
                             </ul>
@@ -41,19 +41,49 @@ const Navbar = (props) => {
                     </div>
                 </div>
             </nav>
-            <div className="modal fade" id="exampleModal"  aria-labelledby="exampleModalLabel" aria-hidden="true">
+            //MODAL PARA EL REGISTRO DE PRODUCTOS
+            <div className="modal fade" id="productModal" aria-labelledby="productModalLabel" aria-hidden="true">
                 <div className="modal-dialog modal-lg">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="exampleModalLabel">Registrar productos</h5>
+                            <h5 className="modal-title" id="productModalLabel">Registrar productos</h5>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
                             <FormAddProduct></FormAddProduct>
-                        </div>                        
+                        </div>
                     </div>
                 </div>
             </div>
+            //MODAL PARA EL REGISTRO CLIENTES
+            <div className="modal fade" id="clientModal" aria-labelledby="clientModalLabel" aria-hidden="true">
+                <div className="modal-dialog modal-lg">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="clientModalLabel">Registrar cliente</h5>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div className="modal-body">
+                            <ModalCliente></ModalCliente>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            //MODAL PARA EL REGISTRO VENDEDOR
+            <div className="modal fade" id="vendedorModal" aria-labelledby="vendedorLabel" aria-hidden="true">
+                <div className="modal-dialog modal-lg">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="vendedorLabel">Registrar vendedor</h5>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div className="modal-body">
+                        <ModalCliente></ModalCliente>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
 
     )

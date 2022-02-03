@@ -20,7 +20,7 @@ const Product = () => {
     return (
         <>
             <Header />
-            <div class="container  pt-5">
+            <div className="container  pt-5">
                 <div className="col-10 position-fixed pt-3">
 
                     <div className="row">

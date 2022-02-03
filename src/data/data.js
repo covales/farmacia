@@ -16,7 +16,7 @@ export default [
      "cantidad": 2,
      "pVenta": 65,
      "modoVenta": "uni",
-     "laboratorio": " vita                                                     ",
+     "laboratorio": "vita",
      "ubicacion": "vitrina 2"
     },
     {
