@@ -41,7 +41,7 @@ const Navbar = (props) => {
                     </div>
                 </div>
             </nav>
-            //MODAL PARA EL REGISTRO DE PRODUCTOS
+            {/*MODAL PARA EL REGISTRO DE PRODUCTOS*/}
             <div className="modal fade" id="productModal" aria-labelledby="productModalLabel" aria-hidden="true">
                 <div className="modal-dialog modal-lg">
                     <div className="modal-content">
@@ -55,7 +55,7 @@ const Navbar = (props) => {
                     </div>
                 </div>
             </div>
-            //MODAL PARA EL REGISTRO CLIENTES
+            {/*MODAL PARA EL REGISTRO CLIENTES*/}
             <div className="modal fade" id="clientModal" aria-labelledby="clientModalLabel" aria-hidden="true">
                 <div className="modal-dialog modal-lg">
                     <div className="modal-content">
@@ -69,7 +69,7 @@ const Navbar = (props) => {
                     </div>
                 </div>
             </div>
-            //MODAL PARA EL REGISTRO VENDEDOR
+            {/*MODAL PARA EL REGISTRO VENDEDOR*/}
             <div className="modal fade" id="vendedorModal" aria-labelledby="vendedorLabel" aria-hidden="true">
                 <div className="modal-dialog modal-lg">
                     <div className="modal-content">

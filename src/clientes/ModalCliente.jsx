@@ -32,6 +32,7 @@ const ModalCliente = () => {
                 id="nombre"
                 onChange={handleInputChange}
                 value={vendedor.nombre}
+                required
             />
         </div>
     </div>
@@ -44,6 +45,7 @@ const ModalCliente = () => {
                 id="apellido"
                 onChange={handleInputChange}
                 value={vendedor.apellido}
+                required
             />
         </div>
     </div>
@@ -56,6 +58,7 @@ const ModalCliente = () => {
             id="ci" 
             onChange={handleInputChange}
             value={vendedor.ci}
+            required
             />
         </div>
     </div>
@@ -68,6 +71,7 @@ const ModalCliente = () => {
             id="telefono1" 
             onChange={handleInputChange}
             value={vendedor.telefono1}
+            required
             />
         </div>
     </div>
@@ -80,6 +84,7 @@ const ModalCliente = () => {
             id="telefono2" 
             onChange={handleInputChange}
             value={vendedor.telefono2}
+            required
             />
         </div>
     </div>
@@ -92,6 +97,7 @@ const ModalCliente = () => {
             id="fechan" 
             onChange={handleInputChange}
             value={vendedor.fechan}
+            required
             />
         </div>
     </div>
@@ -104,6 +110,7 @@ const ModalCliente = () => {
             id="edad" 
             onChange={handleInputChange}
             value={vendedor.edad}
+            required
             />
         </div>
     </div>
