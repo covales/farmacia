@@ -25,6 +25,7 @@ const FormAddProduct = () => {
     //console.log(objProducto);
     await addDoc(collection(db, "productos"), objProducto);
     alert("registro exitoso");
+    
   };
 
   const handleSubmit = (e) => {
