@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-const ListProductAddSale = ({ productadd, borrartodo, limpiarproductadd, borraruno }) => {
-  const [venta, setVenta] = useState([]);
+const ListProductAddSale = ({ productadd, borrartodo, limpiarproductadd, borraruno, regventa }) => {
+  
   var total = 0;
   
 
@@ -35,7 +35,7 @@ const ListProductAddSale = ({ productadd, borrartodo, limpiarproductadd, borraru
         <tbody className="card-body">
           {productadd.map(
             (p, index) => (
-              (total += parseInt(p.cantidadP) * p.precio),
+              (total += parseInt(p.cantidadP) * parseInt(p.precio)),
               (
                 <tr key={index}>
                   <td>{p.nombre}</td>
@@ -61,7 +61,7 @@ const ListProductAddSale = ({ productadd, borrartodo, limpiarproductadd, borraru
         <button
           type="submit"
           className="btn btn-primary"
-          onClick={handleSubmit}
+          onClick={regventa}
         >
           Vender
         </button>

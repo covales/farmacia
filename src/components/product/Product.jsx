@@ -56,7 +56,7 @@ const Product = () => {
                             </p>
 
                             <button type="button" className="btn btn-success btn-sm me-2">editar</button>
-                            <button type="button" className="btn btn-danger btn-sm">eliminar</button>
+                            <button type="button" className="btn btn-danger btn-sm">ocultar</button>
                             <hr />
                         </div>
 

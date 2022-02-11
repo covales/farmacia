@@ -10,24 +10,40 @@ import {
   onSnapshot,
   QuerySnapshot,
 } from "firebase/firestore";
+import { helpHttp } from "../../helpers/helpHttp";
 
 const ListProduct = () => {
+
   const [productos, setProductos] = useState([]);
   const [productsearch, setProductsearch] = useState([]);
 
-  const getProductos = async () => {
-    const unsub = onSnapshot(collection(db, "dataProduct"), (snapshot) => {
-      const docs = [];
-      snapshot.forEach((doc) => {
-        docs.push({ ...doc.data(), id: doc.id });
-      });
-      setProductos(docs);
-      setProductsearch(docs);
-    });
+  let api = helpHttp();
+  let urlProductos = "http://localhost:5000/productos";
 
-    return unsub;
-    // setProductos(data);
-    //  setProductsearch(data);
+  const getProductos = async () => {
+    //Para traer los datos desde firebase
+    // const unsub = onSnapshot(collection(db, "dataProduct"), (snapshot) => {
+    //   const docs = [];
+    //   snapshot.forEach((doc) => {
+    //     docs.push({ ...doc.data(), id: doc.id });
+    //   });
+    //   setProductos(docs);
+    //   setProductsearch(docs);
+    // });
+
+    //PARA TRAER LOS DATOS DESDE JSON-SERVER
+    helpHttp()
+    .get(urlProductos)
+    .then((res) => {
+      //console.log(res);
+      if (!res.err) {
+        setProductos(res);   
+        setProductsearch(res);     
+      } else {
+        setProductos(null);
+      }
+    });    
+     
   };
 
   const filtrar = (terminoBusqueda) => {
