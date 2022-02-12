@@ -27,15 +27,15 @@ const Navbar = (props) => {
                         </ul>
                         <div className="dropdown mx-auto">
                             <a href="#" className="d-flex text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="https://github.com/mdo.png" alt="" width="32" height="32" className="rounded-circle me-2" />
-                                <strong>Pablo</strong>
+                                
+                                <strong>Opciones</strong>
                             </a>
                             <ul className="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
                                 <li><a className="dropdown-item" data-bs-toggle="modal" data-bs-target="#productModal">Registrar Producto</a></li>
                                 <li><a className="dropdown-item" data-bs-toggle="modal" data-bs-target="#vendedorModal">Registrar Vendedor</a></li>
                                 <li><a className="dropdown-item" data-bs-toggle="modal" data-bs-target="#clientModal">Registrar Cliente</a></li>
-                                <li><hr className="dropdown-divider" /></li>
-                                <li><a className="dropdown-item" href="#">Salir</a></li>
+                                
+                               
                             </ul>
                         </div>
                     </div>

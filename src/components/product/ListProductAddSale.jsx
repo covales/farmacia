@@ -42,7 +42,7 @@ const ListProductAddSale = ({ productadd, borrartodo, limpiarproductadd, borraru
                   <td>{p.cantidadP}</td>
                   <td>{p.subTotal}</td>
                   <td>
-                    <button type="button" className="btn btn-primary" onClick={borraruno(index)}>
+                    <button type="button" className="btn btn-danger" onClick={borraruno(index)}>
                       Eliminar
                     </button>
                   </td>
@@ -51,7 +51,7 @@ const ListProductAddSale = ({ productadd, borrartodo, limpiarproductadd, borraru
               )
             )
           )}
-          <tr>
+          <tr className="table-danger">
             <td colSpan="3">Total</td>
             <td className="">{total}</td>
           </tr>
@@ -60,13 +60,13 @@ const ListProductAddSale = ({ productadd, borrartodo, limpiarproductadd, borraru
       <div className="card-footer d-grid gap-2 d-md-flex justify-content-md-end">
         <button
           type="submit"
-          className="btn btn-primary"
+          className="btn btn-outline-success"
           onClick={regventa}
         >
           Vender
         </button>
 
-        <button type="button" className="btn btn-primary" onClick={borrartodo}>
+        <button type="button" className="btn btn-danger" onClick={borrartodo}>
           borrar
         </button>
       </div>

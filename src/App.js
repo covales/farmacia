@@ -6,6 +6,7 @@ import ListProductLowStock from './components/product/ListProductLowStock';
 import ProductSale from './components/product/ProductSale';
 import ListClient from './clientes/ListClient';
 import Product from './components/product/Product';
+import ListVentas from './ventas/ListVentas';
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
           <Route exact path="lowstock" element={<ListProductLowStock/>}/>
           <Route exact path="productsale" element={<ProductSale/>}/>
           <Route exact path="productos" element={<Product/>}/>
-          <Route exact path="clientes" element={<ListClient/>}/>         
+          <Route exact path="clientes" element={<ListClient/>}/>
+          <Route exact path="ventas" element={<ListVentas/>}/>         
         </Routes>        
       
     </Router>

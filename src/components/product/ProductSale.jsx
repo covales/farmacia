@@ -16,6 +16,7 @@ import db from "../../data/firebaseConfig";
 import ListProducSale from "./ListProducSale";
 import ListProductAddSale from "./ListProductAddSale";
 import { helpHttp } from "../../helpers/helpHttp";
+import { Link } from "react-router-dom"
 
 const ProductSale = () => {
   const [productos, setProductos] = useState([]);
@@ -126,18 +127,16 @@ const ProductSale = () => {
       alert("Agrege uno o mas productos para vender");
     } else if (productadd) {
       let total = 0;
-      let productUpdate=null;
+
       productadd.map((p) => {
         total += parseInt(p.cantidadP) * parseInt(p.precio);
-        productUpdate= p.id;
-
       });
 
       const v = {
         id: Date.now(),
         fecha: Date(),
         productos: productadd,
-        totanVenta: total,
+        totalVenta: total,
       };
       let options = {
         body: v,
@@ -146,14 +145,21 @@ const ProductSale = () => {
       api.post(urlVentas, options).then((res) => {
         //console.log(res);
         if (!res.err) {
-          let endpoit = `${urlProductos}/${productUpdate}`;
-          let optionsUpdate = {
-            body: productos,
-            headers: { "content-type": "application/json" },
-          };
-          api.put(endpoit,optionsUpdate).then((res)=>{
-            
-          })
+          productadd.map((pa) => {
+            let kp = pa.id;
+            const producto = productos.find((p) => p.id === kp);
+
+            let endpoit = `${urlProductos}/${producto.id}`;
+
+            let optionsUpdate = {
+              body: producto,
+              headers: { "content-type": "application/json" },
+            };
+
+            api.put(endpoit, optionsUpdate).then((res) => {
+              //console.log(res);
+            });
+          });
 
           alert("Venta registrada exitosamente");
           console.log(productadd);
@@ -175,16 +181,30 @@ const ProductSale = () => {
       <Header></Header>
 
       <div className="row pt-3 ">
-        <h3 className="text-center pt-5">
-          <span className="p-1">
-            <input
-              type="search"
-              placeholder="Buscar producto..."
-              aria-label="Search"
-            />
-          </span>
-          VENDER PRODUCTOS
-        </h3>
+        <div className="row">
+          <div className="col"></div>
+          <div className="col">
+            {" "}
+            <div className="input-group input-group-sm mb-3 pt-5">
+              <div className="input-group-prepend">
+                <span className="input-group-text" id="inputGroup-sizing-sm">
+                  Buscar
+                </span>
+              </div>
+              <input
+                type="text"
+                className="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm"
+                placeholder="Buscar Producto..."
+              />
+            </div>
+          </div>
+          <div className="col pt-5"> 
+                                <Link className="btn btn-sm btn-outline-secondary " to='/ventas'>Ventas Registradas</Link>
+                            </div>
+        </div>
+
         <ListProducSale
           data={productos}
           addProduct={addProduct}
