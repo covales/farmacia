@@ -21,7 +21,7 @@ const ListProducSale = ({ data, addProduct, handleInputChange }) => {
             <tr>
               <th scope="col">Producto</th>
               <th scope="col" className="text-center">Precio</th>
-              <th scope="col" className="text-center">Stock</th>
+              <th scope="col" className="text-center">Ubicación</th>
               <th scope="col" className="text-center">Cantidad</th>
               <th scope="col" className="text-center"></th>
             </tr>
@@ -65,9 +65,9 @@ const ListProducSale = ({ data, addProduct, handleInputChange }) => {
               data.map((p, index) => {
                 return (
                   <tr key={index}>
-                    <td>{p.medicamentoPresentacion}</td>
+                    <td>{p.medicamentoPresentacion}<span class="badge bg-secondary">{p.cantidad}</span></td>
                     <td className="text-center">{p.pVenta}</td>
-                    <td className="text-center">{p.cantidad}</td>
+                    <td className="text-center">{p.ubicacion}</td>
                     <td>
                       <input
                         type="number"

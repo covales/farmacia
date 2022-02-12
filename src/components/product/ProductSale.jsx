@@ -45,6 +45,7 @@ const ProductSale = () => {
   
       setProductos(resultadoBusqueda);
     };
+    
     const handleSearch = (e) => {
       e.preventDefault();
       const cadena = e.target.value?.toLowerCase();

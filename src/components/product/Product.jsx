@@ -8,6 +8,11 @@ import { helpHttp } from "../../helpers/helpHttp";
 
 const Product = () => {
   const [dataProduct, setdataProduct] = useState([]);
+  const [dataproductcopy, setDataProductCopy] = useState([]);
+  const [busqueda, setbusqueda] = useState("");
+
+  
+
   let api = helpHttp();
   let urlProductos = "http://localhost:5000/productos";
   
@@ -19,11 +24,39 @@ const Product = () => {
         //console.log(res);
         if (!res.err) {
           setdataProduct(res);
+          setDataProductCopy(res);
         } else {
           setdataProduct(null);
         }
       });
   };
+  const filtro = (terminoBusqueda) => {
+    const resultadoBusqueda = [];
+    const limite = dataproductcopy.length;
+
+    for (let index = 0; index < limite; index++) {
+      const nombreProducto =
+      dataproductcopy[index].medicamentoPresentacion?.toLowerCase();
+      //console.log(nombreProducto);
+      const patt = new RegExp(terminoBusqueda);
+      const res = patt.test(nombreProducto);
+
+      if (res) {
+        resultadoBusqueda.push(dataproductcopy[index]);
+      }
+    }
+
+    setdataProduct(resultadoBusqueda);
+  };
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const cadena = e.target.value?.toLowerCase();
+    setbusqueda(e.target.value);
+    filtro(cadena);
+    // console.log("busqueda: " + cadena);
+
+}
   
   const donwloadExcel=()=>{
     //libro de trabajo
@@ -44,7 +77,22 @@ const Product = () => {
         <div className="col-md-10 position-fixed pt-3 bg-secondary p-2">
           <div className="row ">
             <div className="col">
-             {/*  <Search /> */}
+            <div className="input-group input-group-sm mb-3">
+              <div className="input-group-prepend">
+                <span className="input-group-text" id="inputGroup-sizing-sm">
+                  Buscar
+                </span>
+              </div>
+              <input
+                type="text"
+                className="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm"
+                placeholder="Buscar Producto..."
+                onChange={handleSearch}
+                value={busqueda}
+              />
+            </div> 
             </div>
             <div className="col">
               <span className="text-white">Total : {dataProduct.length}</span>

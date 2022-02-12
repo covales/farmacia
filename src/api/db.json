@@ -8019,6 +8019,16 @@
       "laboratorio": "ifa",
       "ubicacion": "vitrina 1",
       "id": 795
+    },
+    {
+      "medicamentoPresentacion": " quitaesmalte",
+      "fVencimiento": "2021-07-12",
+      "cantidad": "5",
+      "pVenta": "3",
+      "modoVenta": " ",
+      "laboratorio": " ofa",
+      "ubicacion": " vitrina 1",
+      "id": 796
     }
   ]
 }
