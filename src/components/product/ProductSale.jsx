@@ -24,6 +24,35 @@ const ProductSale = () => {
   const [cantidad, setCantidad] = useState([]);
   const [productadd, setProductadd] = useState([]);
   const [venta, setVenta] = useState([]);
+  const [busqueda, setbusqueda] = useState("");
+
+    
+    const filtrar = (terminoBusqueda) => {
+      const resultadoBusqueda = [];
+      const limite = productoscopy.length;
+  
+      for (let index = 0; index < limite; index++) {
+        const nombreProducto =
+        productoscopy[index].medicamentoPresentacion?.toLowerCase();
+        //console.log(nombreProducto);
+        const patt = new RegExp(terminoBusqueda);
+        const res = patt.test(nombreProducto);
+  
+        if (res) {
+          resultadoBusqueda.push(productoscopy[index]);
+        }
+      }
+  
+      setProductos(resultadoBusqueda);
+    };
+    const handleSearch = (e) => {
+      e.preventDefault();
+      const cadena = e.target.value?.toLowerCase();
+      setbusqueda(e.target.value);
+      filtrar(cadena);
+      // console.log("busqueda: " + cadena);
+
+  }
 
   let api = helpHttp();
   let urlProductos = "http://localhost:5000/productos";
@@ -196,7 +225,7 @@ const ProductSale = () => {
           <div className="col"></div>
           <div className="col">
             {" "}
-            <div className="input-group input-group-sm mb-3 pt-5">
+             <div className="input-group input-group-sm mb-3 pt-5">
               <div className="input-group-prepend">
                 <span className="input-group-text" id="inputGroup-sizing-sm">
                   Buscar
@@ -208,8 +237,9 @@ const ProductSale = () => {
                 aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-sm"
                 placeholder="Buscar Producto..."
+                onChange={handleSearch}
               />
-            </div>
+            </div> 
           </div>
           <div className="col pt-5">
             <Link className="btn btn-sm btn-outline-secondary " to="/ventas">

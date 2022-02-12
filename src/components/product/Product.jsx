@@ -44,7 +44,7 @@ const Product = () => {
         <div className="col-md-10 position-fixed pt-3 bg-secondary p-2">
           <div className="row ">
             <div className="col">
-              <Search />
+             {/*  <Search /> */}
             </div>
             <div className="col">
               <span className="text-white">Total : {dataProduct.length}</span>
@@ -108,12 +108,12 @@ const Product = () => {
                   <span>Vencimiento: {dp.fVencimiento}</span>
                 </p>
 
-                <button type="button" className="btn btn-success btn-sm me-2">
+                {/* <button type="button" className="btn btn-success btn-sm me-2">
                   editar
                 </button>
                 <button type="button" className="btn btn-danger btn-sm">
                   ocultar
-                </button>
+                </button> */}
                 <hr />
               </div>
             );
