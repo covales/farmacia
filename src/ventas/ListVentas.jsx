@@ -41,7 +41,7 @@ const ListVentas = () => {
 
             return (
               <div
-                className="col-3 card  border-success me-2 "
+                className="col-md-4 card  border-success me-2 "
                 key={venta.id}
               >
                 <div className="card-header bg-transparent border-success">Fecha de venta: {dia +"/"+ mes +"/"+ año }</div>

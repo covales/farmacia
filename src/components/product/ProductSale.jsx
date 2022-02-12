@@ -16,7 +16,7 @@ import db from "../../data/firebaseConfig";
 import ListProducSale from "./ListProducSale";
 import ListProductAddSale from "./ListProductAddSale";
 import { helpHttp } from "../../helpers/helpHttp";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const ProductSale = () => {
   const [productos, setProductos] = useState([]);
@@ -109,8 +109,19 @@ const ProductSale = () => {
     }
   }
 
-  const borrarUno = (itemProduct) => {
-    // console.log(itemProduct);
+  const borrarUno = (idProductDel) => {
+    //console.log(idProductDel);
+    let newAdd = productadd.filter((el) => el.id !== idProductDel);
+    let updateProductDel = productadd.find((p) => p.id === idProductDel);
+    setProductos(
+      productos.map((p) =>
+        p.id === updateProductDel.id ? { ...p, cantidad: updateProductDel.stockAnterior } : p
+      )
+    );
+
+
+    console.log(updateProductDel);
+    setProductadd(newAdd);
   };
 
   const borrarTodo = () => {
@@ -200,9 +211,11 @@ const ProductSale = () => {
               />
             </div>
           </div>
-          <div className="col pt-5"> 
-                                <Link className="btn btn-sm btn-outline-secondary " to='/ventas'>Ventas Registradas</Link>
-                            </div>
+          <div className="col pt-5">
+            <Link className="btn btn-sm btn-outline-secondary " to="/ventas">
+              Ventas Registradas
+            </Link>
+          </div>
         </div>
 
         <ListProducSale

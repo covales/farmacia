@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import db from "../../data/firebaseConfig";
-
+import { helpHttp } from "../../helpers/helpHttp";
 const initialStateValues = {
   medicamentoPresentacion:" ",
   fVencimiento:" ",
@@ -14,7 +14,9 @@ const initialStateValues = {
 
 const FormAddProduct = () => {
   const [producto, setProducto] = useState(initialStateValues);
-   
+  let urlProductos = "http://localhost:5000/productos";
+  let api = helpHttp();
+
 
   const handleInputChange = (e) => {
     const { id, value } = e.target;
@@ -23,8 +25,21 @@ const FormAddProduct = () => {
 
   const registrarProducto = async (objProducto) => {
     //console.log(objProducto);
-    await addDoc(collection(db, "productos"), objProducto);
-    alert("registro exitoso");
+   /*  await addDoc(collection(db, "productos"), objProducto);
+    alert("registro exitoso"); */
+    let options = {
+      body: objProducto,
+      headers: { "content-type": "application/json" },
+    };
+    api.post(urlProductos,options).then((res)=>{
+      if (!res.err){
+        alert("Producto registrado exitosamente");
+      }else{
+        alert("No se a podido registrar el producto");
+      }
+
+    })
+
     
   };
 

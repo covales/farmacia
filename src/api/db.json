@@ -8009,6 +8009,16 @@
       "modoVenta": "cu",
       "laboratorio": "mamadera",
       "ubicacion": "mamadera"
+    },
+    {
+      "medicamentoPresentacion": " Paracetamol",
+      "fVencimiento": "2023-03-15",
+      "cantidad": "300",
+      "pVenta": "1",
+      "modoVenta": "unidad",
+      "laboratorio": "ifa",
+      "ubicacion": "vitrina 1",
+      "id": 795
     }
   ]
 }

@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 
-const ListProductAddSale = ({ productadd, borrartodo, limpiarproductadd, borraruno, regventa }) => {
-  
+const ListProductAddSale = ({
+  productadd,
+  borrartodo,
+  limpiarproductadd,
+  borraruno,
+  regventa,
+}) => {
   var total = 0;
-  
 
   const handleSubmit = (e) => {
     //e.preventDefault();
@@ -42,12 +46,11 @@ const ListProductAddSale = ({ productadd, borrartodo, limpiarproductadd, borraru
                   <td>{p.cantidadP}</td>
                   <td>{p.subTotal}</td>
                   <td>
-                    <button type="button" className="btn btn-danger" onClick={borraruno(index)}>
+                    <button className="btn btn-danger" onClick={()=>borraruno(p.id)}>
                       Eliminar
                     </button>
                   </td>
                 </tr>
-                
               )
             )
           )}
