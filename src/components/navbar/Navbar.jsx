@@ -6,7 +6,7 @@ import ModalCliente from "../../clientes/ModalCliente";
 const Navbar = (props) => {
   return (
     <div className="container">
-      <nav className="navbar navbar-expand-md navbar-dark  fixed-top bg-dark ">
+      <nav className="navbar navbar-expand-md navbar-dark  fixed-top bg-dark bg-gradient">
         <div className="container ">
           <Link className="navbar-brand" to="/">
             Farmacia El Cristo
@@ -82,8 +82,8 @@ const Navbar = (props) => {
         <div className="modal-dialog modal-lg">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title" id="productModalLabel">
-                Registrar productos
+              <h5 className="modal-title text-danger" id="productModalLabel">
+                Registrar Producto
               </h5>
               <button
                 type="button"

@@ -67,46 +67,266 @@
         }
       ],
       "totalVenta": 15
+    },
+    {
+      "id": 1644725073105,
+      "fecha": "Sun Feb 13 2022 00:04:33 GMT-0400 (hora de Bolivia)",
+      "productos": [
+        {
+          "id": "1",
+          "nombre": "enema vit jarabe",
+          "cantidadP": 1,
+          "precio": 71,
+          "stockAnterior": 5,
+          "stockActual": 4,
+          "subTotal": 71
+        },
+        {
+          "id": "2",
+          "nombre": "vitasang jarabe",
+          "cantidadP": 1,
+          "precio": 65,
+          "stockAnterior": 1,
+          "stockActual": 0,
+          "subTotal": 65
+        },
+        {
+          "id": "3",
+          "nombre": "pulmotos plus jarabe",
+          "cantidadP": 1,
+          "precio": 55,
+          "stockAnterior": 3,
+          "stockActual": 2,
+          "subTotal": 55
+        },
+        {
+          "id": 795,
+          "nombre": " Paracetamol",
+          "cantidadP": 1,
+          "precio": "1",
+          "stockAnterior": "300",
+          "stockActual": 299,
+          "subTotal": 1
+        }
+      ],
+      "totalVenta": 192
+    },
+    {
+      "id": 1644725083696,
+      "fecha": "Sun Feb 13 2022 00:04:43 GMT-0400 (hora de Bolivia)",
+      "productos": [
+        {
+          "id": "1",
+          "nombre": "enema vit jarabe",
+          "cantidadP": 1,
+          "precio": 71,
+          "stockAnterior": 5,
+          "stockActual": 4,
+          "subTotal": 71
+        },
+        {
+          "id": "2",
+          "nombre": "vitasang jarabe",
+          "cantidadP": 1,
+          "precio": 65,
+          "stockAnterior": 1,
+          "stockActual": 0,
+          "subTotal": 65
+        },
+        {
+          "id": "3",
+          "nombre": "pulmotos plus jarabe",
+          "cantidadP": 1,
+          "precio": 55,
+          "stockAnterior": 3,
+          "stockActual": 2,
+          "subTotal": 55
+        },
+        {
+          "id": 795,
+          "nombre": " Paracetamol",
+          "cantidadP": 1,
+          "precio": "1",
+          "stockAnterior": "300",
+          "stockActual": 299,
+          "subTotal": 1
+        }
+      ],
+      "totalVenta": 192
+    },
+    {
+      "id": 1644725162880,
+      "fecha": "Sun Feb 13 2022 00:06:02 GMT-0400 (hora de Bolivia)",
+      "productos": [
+        {
+          "id": 795,
+          "nombre": " Paracetamol",
+          "cantidadP": 5,
+          "precio": "1",
+          "stockAnterior": "300",
+          "stockActual": 295,
+          "subTotal": 5
+        }
+      ],
+      "totalVenta": 5
+    },
+    {
+      "id": 1644725202930,
+      "fecha": "Sun Feb 13 2022 00:06:42 GMT-0400 (hora de Bolivia)",
+      "productos": [
+        {
+          "id": "1",
+          "nombre": "enema vit jarabe",
+          "cantidadP": 5,
+          "precio": 71,
+          "stockAnterior": 5,
+          "stockActual": 0,
+          "subTotal": 355
+        },
+        {
+          "id": "2",
+          "nombre": "vitasang jarabe",
+          "cantidadP": 1,
+          "precio": 65,
+          "stockAnterior": 1,
+          "stockActual": 0,
+          "subTotal": 65
+        },
+        {
+          "id": "3",
+          "nombre": "pulmotos plus jarabe",
+          "cantidadP": 1,
+          "precio": 55,
+          "stockAnterior": 3,
+          "stockActual": 2,
+          "subTotal": 55
+        },
+        {
+          "id": 795,
+          "nombre": " Paracetamol",
+          "cantidadP": 5,
+          "precio": "1",
+          "stockAnterior": "300",
+          "stockActual": 295,
+          "subTotal": 5
+        }
+      ],
+      "totalVenta": 480
+    },
+    {
+      "id": 1644725442042,
+      "fecha": "Sun Feb 13 2022 00:10:42 GMT-0400 (hora de Bolivia)",
+      "productos": [
+        {
+          "id": "1",
+          "nombre": "enema vit jarabe",
+          "cantidadP": 1,
+          "precio": 71,
+          "stockAnterior": 5,
+          "stockActual": 4,
+          "subTotal": 71
+        },
+        {
+          "id": 795,
+          "nombre": " Paracetamol",
+          "cantidadP": 3,
+          "precio": "1",
+          "stockAnterior": 295,
+          "stockActual": 292,
+          "subTotal": 3
+        }
+      ],
+      "totalVenta": 74
+    },
+    {
+      "id": 1644725474440,
+      "fecha": "Sun Feb 13 2022 00:11:14 GMT-0400 (hora de Bolivia)",
+      "productos": [
+        {
+          "id": "1",
+          "nombre": "enema vit jarabe",
+          "cantidadP": 1,
+          "precio": 71,
+          "stockAnterior": 5,
+          "stockActual": 4,
+          "subTotal": 71
+        }
+      ],
+      "totalVenta": 71
+    },
+    {
+      "id": 1644725506645,
+      "fecha": "Sun Feb 13 2022 00:11:46 GMT-0400 (hora de Bolivia)",
+      "productos": [
+        {
+          "id": "1",
+          "nombre": "enema vit jarabe",
+          "cantidadP": 1,
+          "precio": 71,
+          "stockAnterior": 4,
+          "stockActual": 3,
+          "subTotal": 71
+        },
+        {
+          "id": "2",
+          "nombre": "vitasang jarabe",
+          "cantidadP": 1,
+          "precio": 65,
+          "stockAnterior": 1,
+          "stockActual": 0,
+          "subTotal": 65
+        },
+        {
+          "id": "3",
+          "nombre": "pulmotos plus jarabe",
+          "cantidadP": 1,
+          "precio": 55,
+          "stockAnterior": 3,
+          "stockActual": 2,
+          "subTotal": 55
+        }
+      ],
+      "totalVenta": 191
     }
   ],
   "productos": [
     {
-      "id": "1",
+      "id": 1,
       "medicamentoPresentacion": "enema vit jarabe",
       "fVencimiento": "2023-06-01",
-      "cantidad": 5,
+      "cantidad": 3,
       "pVenta": 71,
-      "modoVenta": "uni",
+      "modoVenta": "unidad",
       "laboratorio": "vita",
       "ubicacion": "vitrina 2"
     },
     {
-      "id": "2",
+      "id": 2,
       "medicamentoPresentacion": "vitasang jarabe",
-      "fVencimiento": "N",
-      "cantidad": 1,
+      "fVencimiento": "25-05-25",
+      "cantidad": "5",
       "pVenta": 65,
-      "modoVenta": "uni",
+      "modoVenta": "unidad",
       "laboratorio": "vita",
       "ubicacion": "vitrina 2"
     },
     {
-      "id": "3",
+      "id": 3,
       "medicamentoPresentacion": "pulmotos plus jarabe",
       "fVencimiento": "2023-03-01",
       "cantidad": 3,
       "pVenta": 55,
-      "modoVenta": "uni",
+      "modoVenta": "unidad",
       "laboratorio": "vita",
       "ubicacion": "vitrina 2"
     },
     {
-      "id": "4",
+      "id": 4,
       "medicamentoPresentacion": "vaselagar compuesto jarabe",
       "fVencimiento": "2022-06-01",
       "cantidad": 3,
       "pVenta": 63,
-      "modoVenta": "uni",
+      "modoVenta": "unidad",
       "laboratorio": "vita",
       "ubicacion": "vitrina 2"
     },
@@ -116,7 +336,7 @@
       "fVencimiento": "2023-05-01",
       "cantidad": 3,
       "pVenta": 45,
-      "modoVenta": "uni",
+      "modoVenta": "unidad",
       "laboratorio": " vita",
       "ubicacion": "vitrina 2"
     },
@@ -126,7 +346,7 @@
       "fVencimiento": "2022-05-01",
       "cantidad": 1,
       "pVenta": 40,
-      "modoVenta": "uni",
+      "modoVenta": "unidad",
       "laboratorio": " vita",
       "ubicacion": "vitrina 2"
     },
@@ -136,7 +356,7 @@
       "fVencimiento": "2023-06-01",
       "cantidad": 2,
       "pVenta": 35,
-      "modoVenta": "uni",
+      "modoVenta": "unidad",
       "laboratorio": " vita",
       "ubicacion": "vitrina 2"
     },
@@ -146,17 +366,17 @@
       "fVencimiento": "2023-04-01",
       "cantidad": 5,
       "pVenta": 39,
-      "modoVenta": "uni",
+      "modoVenta": "unidad",
       "laboratorio": " vita",
       "ubicacion": "vitrina 2"
     },
     {
       "id": 9,
       "medicamentoPresentacion": "pectorales simple vita jarabe",
-      "fVencimiento": "1900-01-00",
-      "cantidad": 0,
-      "pVenta": 0,
-      "modoVenta": "uni",
+      "fVencimiento": "2025-05-25",
+      "cantidad": "100",
+      "pVenta": "5",
+      "modoVenta": "unidad",
       "laboratorio": " vita",
       "ubicacion": "vitrina 2"
     },
@@ -166,7 +386,7 @@
       "fVencimiento": "2022-02-01",
       "cantidad": 3,
       "pVenta": 35,
-      "modoVenta": "uni",
+      "modoVenta": "unidad",
       "laboratorio": " vita",
       "ubicacion": "vitrina 2"
     },
@@ -176,7 +396,7 @@
       "fVencimiento": "2022-09-01",
       "cantidad": 216,
       "pVenta": 4,
-      "modoVenta": "uni",
+      "modoVenta": "unidad",
       "laboratorio": " vita",
       "ubicacion": "vitrina 2"
     },
@@ -186,14 +406,14 @@
       "fVencimiento": "2023-06-01",
       "cantidad": 6,
       "pVenta": 71,
-      "modoVenta": "uni",
+      "modoVenta": "unidad",
       "laboratorio": " vita",
       "ubicacion": "vitrina 2"
     },
     {
       "id": 13,
       "medicamentoPresentacion": "vitasang jarabe",
-      "fVencimiento": "no definida",
+      "fVencimiento": "2025-05-25",
       "cantidad": 2,
       "pVenta": 65,
       "modoVenta": "uni",
@@ -752,11 +972,11 @@
     },
     {
       "id": 69,
-      "medicamentoPresentacion": "no definido",
-      "fVencimiento": "no definida",
-      "cantidad": 0,
-      "pVenta": 0,
-      "modoVenta": "no definido",
+      "medicamentoPresentacion": "colirio aquablan",
+      "fVencimiento": "2025-05-25",
+      "cantidad": "150",
+      "pVenta": "35",
+      "modoVenta": "unidad",
       "laboratorio": "minerva",
       "ubicacion": "vitrina 2"
     },
@@ -8013,7 +8233,7 @@
     {
       "medicamentoPresentacion": " Paracetamol",
       "fVencimiento": "2023-03-15",
-      "cantidad": "300",
+      "cantidad": 295,
       "pVenta": "1",
       "modoVenta": "unidad",
       "laboratorio": "ifa",
@@ -8029,6 +8249,46 @@
       "laboratorio": " ofa",
       "ubicacion": " vitrina 1",
       "id": 796
+    },
+    {
+      "medicamentoPresentacion": " toalla higienica nosotras",
+      "fVencimiento": "2023-02-07",
+      "cantidad": "50",
+      "pVenta": "10",
+      "modoVenta": " paquete",
+      "laboratorio": " ifa",
+      "ubicacion": " vitrina 10",
+      "id": 797
+    },
+    {
+      "medicamentoPresentacion": "parametanol",
+      "fVencimiento": "2022-12-20",
+      "cantidad": "12",
+      "pVenta": "1",
+      "modoVenta": "unidad",
+      "laboratorio": "efa",
+      "ubicacion": "vitrina 1",
+      "id": 798
+    },
+    {
+      "medicamentoPresentacion": "asdf",
+      "fVencimiento": "2022-02-17",
+      "cantidad": "1",
+      "pVenta": "1",
+      "modoVenta": "asd",
+      "laboratorio": "asdf",
+      "ubicacion": "sdf",
+      "id": 799
+    },
+    {
+      "medicamentoPresentacion": "bisbiluriparangalicutirimicuarodol ",
+      "fVencimiento": "2023-09-11",
+      "cantidad": "5",
+      "pVenta": "65",
+      "modoVenta": "unidad",
+      "laboratorio": "ifa",
+      "ubicacion": "vitrina 2",
+      "id": 800
     }
   ]
 }

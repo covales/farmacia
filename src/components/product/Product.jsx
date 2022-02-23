@@ -3,19 +3,19 @@ import data from "../../data/data";
 import Header from "../header/Header";
 import Search from "../search/Search";
 import { helpHttp } from "../../helpers/helpHttp";
+import DonwloadProduct from "./DonwloadProduct";
+import FormEditProduct from "./FormEditProduct";
 //import ExportExcel from "react-export-excel";
-
 
 const Product = () => {
   const [dataProduct, setdataProduct] = useState([]);
   const [dataproductcopy, setDataProductCopy] = useState([]);
   const [busqueda, setbusqueda] = useState("");
-
-  
+  const [edit, setEdit] = useState({});
+  var totalP = 0;
 
   let api = helpHttp();
   let urlProductos = "http://localhost:5000/productos";
-  
 
   const getDataProduct = () => {
     helpHttp()
@@ -30,13 +30,14 @@ const Product = () => {
         }
       });
   };
+
   const filtro = (terminoBusqueda) => {
     const resultadoBusqueda = [];
     const limite = dataproductcopy.length;
 
     for (let index = 0; index < limite; index++) {
       const nombreProducto =
-      dataproductcopy[index].medicamentoPresentacion?.toLowerCase();
+        dataproductcopy[index].medicamentoPresentacion?.toLowerCase();
       //console.log(nombreProducto);
       const patt = new RegExp(terminoBusqueda);
       const res = patt.test(nombreProducto);
@@ -55,16 +56,9 @@ const Product = () => {
     setbusqueda(e.target.value);
     filtro(cadena);
     // console.log("busqueda: " + cadena);
-
-}
-  
-  const donwloadExcel=()=>{
-    //libro de trabajo
-   
-    
-
   };
-  
+
+  const update = (producto) => {};
 
   useEffect(() => {
     getDataProduct();
@@ -74,48 +68,33 @@ const Product = () => {
     <>
       <Header />
       <div className="container  pt-5  ">
-        <div className="col-md-10 position-fixed pt-3 bg-secondary p-2">
+        <div className="col-md-10 position-fixed pt-3 bg-secondary bg-gradient p-2">
           <div className="row ">
             <div className="col">
-            <div className="input-group input-group-sm mb-3">
-              <div className="input-group-prepend">
-                <span className="input-group-text" id="inputGroup-sizing-sm">
-                  Buscar
-                </span>
+              <div className="input-group input-group-sm mb-3">
+                <input
+                  type="text"
+                  className="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm"
+                  placeholder="Buscar Producto..."
+                  onChange={handleSearch}
+                  value={busqueda}
+                />
               </div>
-              <input
-                type="text"
-                className="form-control"
-                aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm"
-                placeholder="Buscar Producto..."
-                onChange={handleSearch}
-                value={busqueda}
-              />
-            </div> 
             </div>
             <div className="col">
               <span className="text-white">Total : {dataProduct.length}</span>
-            </div>            
+            </div>
             <div className="col">
-             <button className="btn btn-success"> <svg                
-                width="16"
-                height="16"
-                fill="currentColor"
-                className="bi bi-file-earmark-spreadsheet-fill "
-                viewBox="0 0 16 16"
-              >
-                <path d="M6 12v-2h3v2H6z" />
-                <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM3 9h10v1h-3v2h3v1h-3v2H9v-2H6v2H5v-2H3v-1h2v-2H3V9z" />
-              </svg>Descargar en excel</button>
-              
+              <DonwloadProduct></DonwloadProduct>
             </div>
           </div>
         </div>
       </div>
 
       <div
-        className="row pt-5"
+        className="container-fluid row pt-5"
         data-bs-spy="scroll"
         data-bs-target="#navbar-example"
       >
@@ -127,41 +106,92 @@ const Product = () => {
             <h3>Cargando Productos</h3>
           </div>
         ) : (
-          dataProduct.map((dp) => {
+          dataProduct.map((producto) => {
             return (
               <div
-                className="col-md-3 text-center pt-5"
-                key={dp.id}
+                className="col-md-3 text-center card-group pt-5 "
+                key={producto.id}
                 id="navbar-example"
               >
-                <svg
-                  className="bd-placeholder-img rounded-circle"
-                  width="40"
-                  height="40"
-                  role="img"
-                  preserveAspectRatio="xMidYMid slice"
-                  focusable="false"
-                >
-                  <rect width="100%" height="100%" fill="#35753e" />
-                  <text x="10%" y="50%" fill="#fff" dy=".3em">
-                    {dp.pVenta}bs
-                  </text>
-                </svg>
-                <h6>{dp.medicamentoPresentacion}</h6>
-                <p>
-                  Stock: {dp.cantidad}
+                <h5 className="text-start text-primary container fw-bold">
+                  {producto.medicamentoPresentacion}
+                </h5>
+                <p className="text-start container">
+                  <b className="text-success">Stock:</b>{" "}
+                  <b className="text-danger">{producto.cantidad}</b>
                   <br />
-                  <span>Ubicación: {dp.ubicacion}</span>
+                  <span>
+                    {" "}
+                    <b className="text-success">Ubicación:</b>{" "}
+                    <b>{producto.ubicacion}</b>{" "}
+                  </span>
                   <br />
-                  <span>Vencimiento: {dp.fVencimiento}</span>
+                  <span>
+                    {" "}
+                    <b className="text-success">Vencimiento:</b>{" "}
+                    <b className="text-danger">{producto.fVencimiento}</b>{" "}
+                  </span>
+                  <br />
+                  <span>
+                    <b className="text-success">Precio de venta:</b>{" "}
+                    <b>{producto.pVenta} bs</b>
+                  </span>
+                  <br />
+                  <span>
+                    <b className="text-success">Modo de venta:</b>{" "}
+                    <b className="text-danger">{producto.modoVenta}</b>{" "}
+                  </span>
+                  <br />
+                  <span>
+                    <b className="text-success">Laboratorio:</b>{" "}
+                    <b>{producto.laboratorio}</b>{" "}
+                  </span>
                 </p>
 
-                {/* <button type="button" className="btn btn-success btn-sm me-2">
-                  editar
+                <button
+                  type="button"
+                  className="btn btn-success btn-sm me-2"
+                  data-bs-toggle="modal"
+                  data-bs-target="#editModal"
+                  onClick={() => setEdit(producto)}
+                >
+                  Editar
                 </button>
+                <div
+                  className="modal fade"
+                  id="editModal"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div className="modal-dialog">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h5 className="modal-title text-danger" id="exampleModalLabel">
+                          Editar Producto
+                        </h5>
+                        <button
+                          type="button"
+                          className="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div className="modal-body">
+                        <FormEditProduct
+                          dataEdit={edit}
+                          setEdit={setEdit}
+                          urlProductos={urlProductos}
+                          api={api}
+                          setdataProduct={setdataProduct}
+                          dataProduct={dataProduct}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <button type="button" className="btn btn-danger btn-sm">
-                  ocultar
-                </button> */}
+                  Eliminar
+                </button>
                 <hr />
               </div>
             );

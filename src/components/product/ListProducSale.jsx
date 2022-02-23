@@ -17,9 +17,9 @@ const ListProducSale = ({ data, addProduct, handleInputChange }) => {
         }}
       >
         <table className="table">
-          <thead className="sticky-top bg-info">
+          <thead className="sticky-top table-danger">
             <tr>
-              <th scope="col">Producto</th>
+              <th scope="col"> Stock/Producto</th>
               <th scope="col" className="text-center">Precio</th>
               <th scope="col" className="text-center">Ubicación</th>
               <th scope="col" className="text-center">Cantidad</th>
@@ -65,11 +65,12 @@ const ListProducSale = ({ data, addProduct, handleInputChange }) => {
               data.map((p, index) => {
                 return (
                   <tr key={index}>
-                    <td>{p.medicamentoPresentacion}<span class="badge bg-secondary">{p.cantidad}</span></td>
-                    <td className="text-center">{p.pVenta}</td>
-                    <td className="text-center">{p.ubicacion}</td>
+                    <td className="text-success fst-italic"><span className="badge bg-danger me-3">{p.cantidad}</span>{p.medicamentoPresentacion}</td>
+                    <td className="text-center fst-italic text-primary">{p.pVenta} bs</td>
+                    <td className="text-center fw-bold text-danger">{p.ubicacion}</td>
                     <td>
                       <input
+                      className="border border-success form-control form-control-sm"
                         type="number"
                         placeholder="0"
                         id={`quantity_${index}`}

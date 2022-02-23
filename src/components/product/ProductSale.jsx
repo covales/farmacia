@@ -45,7 +45,7 @@ const ProductSale = () => {
   
       setProductos(resultadoBusqueda);
     };
-    
+
     const handleSearch = (e) => {
       e.preventDefault();
       const cadena = e.target.value?.toLowerCase();
@@ -111,7 +111,7 @@ const ProductSale = () => {
       } else {
         let productoAgregado = productadd.find((pa) => pa.id === key);
         if (productoAgregado) {
-          console.log(productoAgregado);
+        //  console.log(productoAgregado);
           let idProductoAgregado = productoAgregado.id;
           setProductadd(
             productadd.map((padd) =>
@@ -150,7 +150,7 @@ const ProductSale = () => {
     );
 
 
-    console.log(updateProductDel);
+   // console.log(updateProductDel);
     setProductadd(newAdd);
   };
 
@@ -203,7 +203,7 @@ const ProductSale = () => {
           });
 
           alert("Venta registrada exitosamente");
-          console.log(productadd);
+         // console.log(productadd);
           limpiarProductAdd();
         } else {
           alert("No se pudo registrar la venta");
@@ -227,23 +227,19 @@ const ProductSale = () => {
           <div className="col">
             {" "}
              <div className="input-group input-group-sm mb-3 pt-5">
-              <div className="input-group-prepend">
-                <span className="input-group-text" id="inputGroup-sizing-sm">
-                  Buscar
-                </span>
-              </div>
+            
               <input
                 type="text"
-                className="form-control"
+                className="form-control border border-success"
                 aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-sm"
-                placeholder="Buscar Producto..."
+                placeholder="Escribe para buscar un producto..."
                 onChange={handleSearch}
               />
             </div> 
           </div>
           <div className="col pt-5">
-            <Link className="btn btn-sm btn-outline-secondary " to="/ventas">
+            <Link className="btn btn-sm btn-outline-success " to="/ventas">
               Ventas Registradas
             </Link>
           </div>

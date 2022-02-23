@@ -3,20 +3,19 @@ import { addDoc, collection } from "firebase/firestore";
 import db from "../../data/firebaseConfig";
 import { helpHttp } from "../../helpers/helpHttp";
 const initialStateValues = {
-  medicamentoPresentacion:" ",
-  fVencimiento:" ",
-  cantidad:" ",
-  pVenta:" ",
-  modoVenta:" ",
-  laboratorio:" ",
-  ubicacion:" "
+  medicamentoPresentacion:"",
+  fVencimiento:"",
+  cantidad:"",
+  pVenta:"",
+  modoVenta:"",
+  laboratorio:"",
+  ubicacion:""
 }
 
 const FormAddProduct = () => {
   const [producto, setProducto] = useState(initialStateValues);
   let urlProductos = "http://localhost:5000/productos";
   let api = helpHttp();
-
 
   const handleInputChange = (e) => {
     const { id, value } = e.target;
@@ -56,17 +55,17 @@ const FormAddProduct = () => {
   return (
     <form onSubmit={handleSubmit}>
       <div className="mb-2 row">
-        <p>Los campos marcados con * son obligatorios </p>
+        <p className="text-success"><span className="fst-italic">Los campos marcados con</span> <span className="fw-bold text-danger">*</span>(asterisco) <span className="fst-italic"> son obligatorios</span> </p>
         <label
           htmlFor="medicamentoPresentacion"
-          className="col-sm-5 col-form-label col-form-label-sm"
+          className="col-sm-5 col-form-label col-form-label-sm text-primary"
         >
-          * Nombre del producto y presentación
+        <span className="text-danger fw-bold">*</span> Nombre del producto y presentación
         </label>
         <div className="col-sm-5">
           <input
             type="text"
-            className="form-control form-control-sm"
+            className="form-control form-control-sm border border-success"
             id="medicamentoPresentacion"
             onChange={handleInputChange}
             value={producto.medicamentoPresentacion}
@@ -78,14 +77,14 @@ const FormAddProduct = () => {
       <div className="mb-2 row">
         <label
           htmlFor="fVencimiento"
-          className="col-sm-5 col-form-label col-form-label-sm"
+          className="col-sm-5 col-form-label col-form-label-sm text-primary"
         >
-          * Fecha de vencimiento
+          <span className="text-danger fw-bold">*</span> Fecha de vencimiento
         </label>
         <div className="col-sm-5">
           <input
             type="date"
-            className="form-control form-control-sm"
+            className="form-control form-control-sm border border-success"
             id="fVencimiento"
             onChange={handleInputChange}
             value={producto.fVencimiento}
@@ -97,14 +96,14 @@ const FormAddProduct = () => {
       <div className="mb-2 row">
         <label
           htmlFor="cantidad"
-          className="col-sm-5 col-form-label col-form-label-sm"
+          className="col-sm-5 col-form-label col-form-label-sm text-primary"
         >
-          * Cantidad
+          <span className="text-danger fw-bold">*</span> Cantidad/Stock
         </label>
         <div className="col-sm-5">
           <input
             type="number"
-            className="form-control form-control-sm"
+            className="form-control form-control-sm border border-success"
             id="cantidad"
             onChange={handleInputChange}
             value={producto.cantidad}
@@ -116,14 +115,14 @@ const FormAddProduct = () => {
       <div className="mb-2 row">
         <label
           htmlFor="pVenta"
-          className="col-sm-5 col-form-label col-form-label-sm"
+          className="col-sm-5 col-form-label col-form-label-sm text-primary"
         >
-          * Precio de venta
+         <span className="text-danger fw-bold">*</span> Precio de venta
         </label>
         <div className="col-sm-5">
           <input
             type="number"
-            className="form-control form-control-sm"
+            className="form-control form-control-sm border border-success"
             id="pVenta"
             onChange={handleInputChange}
             value={producto.pVenta}
@@ -135,18 +134,18 @@ const FormAddProduct = () => {
       <div className="mb-2 row">
         <label
           htmlFor="modoVenta"
-          className="col-sm-5 col-form-label col-form-label-sm"
+          className="col-sm-5 col-form-label col-form-label-sm text-primary"
         >
-          * Modo de venta
+          Modo de venta
         </label>
         <div className="col-sm-5">
           <input
             type="text"
-            className="form-control form-control-sm"
+            className="form-control form-control-sm border border-success"
             id="modoVenta"
             onChange={handleInputChange}
             value={producto.modoVenta}
-            required
+           
           />
           
         </div>
@@ -155,14 +154,14 @@ const FormAddProduct = () => {
       <div className="mb-2 row">
         <label
           htmlFor="laboratorio"
-          className="col-sm-5 col-form-label col-form-label-sm"
+          className="col-sm-5 col-form-label col-form-label-sm text-primary"
         >
-          * Laboratorio
+          <span className="text-danger fw-bold">*</span> Laboratorio
         </label>
         <div className="col-sm-5">
           <input
             type="text"
-            className="form-control form-control-sm"
+            className="form-control form-control-sm border border-success"
             id="laboratorio"
             onChange={handleInputChange}
             value={producto.laboratorio}
@@ -175,14 +174,14 @@ const FormAddProduct = () => {
       <div className="mb-2 row">
         <label
           htmlFor="ubicacion"
-          className="col-sm-5 col-form-label col-form-label-sm"
+          className="col-sm-5 col-form-label col-form-label-sm text-primary"
         >
           Ubicación
         </label>
         <div className="col-sm-5">
           <input
             type="text"
-            className="form-control form-control-sm"
+            className="form-control form-control-sm border border-success"
             id="ubicacion"
             onChange={handleInputChange}
             value={producto.ubicacion}
