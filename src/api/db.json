@@ -291,16 +291,6 @@
   ],
   "productos": [
     {
-      "id": 1,
-      "medicamentoPresentacion": "enema vit jarabe",
-      "fVencimiento": "2023-06-01",
-      "cantidad": 3,
-      "pVenta": 71,
-      "modoVenta": "unidad",
-      "laboratorio": "vita",
-      "ubicacion": "vitrina 2"
-    },
-    {
       "id": 2,
       "medicamentoPresentacion": "vitasang jarabe",
       "fVencimiento": "25-05-25",

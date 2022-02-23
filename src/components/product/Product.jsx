@@ -58,7 +58,28 @@ const Product = () => {
     // console.log("busqueda: " + cadena);
   };
 
-  const update = (producto) => {};
+  const delProducto = (producto) => {
+   // console.log(producto);
+   let isDelete = window.confirm( `¿esta seguro de eliminar el producto '${producto.medicamentoPresentacion}'?` );
+   if(isDelete){
+     let newData= dataProduct.filter(p=>p.id!==producto.id);
+     let endpoit = `${urlProductos}/${producto.id}`;
+     let optionsDelete = {
+      body: producto,
+      headers: { "content-type": "application/json" },
+    };
+    api.del(endpoit, optionsDelete).then((res) => {
+      //console.log(res);
+      if (res) {
+        alert("Producto eliminado exitosamente");        
+        setdataProduct(newData);
+      } else {
+        alert("Error al intentar eliminar el producto");
+      }
+    });
+   }
+
+  };
 
   useEffect(() => {
     getDataProduct();
@@ -189,7 +210,7 @@ const Product = () => {
                     </div>
                   </div>
                 </div>
-                <button type="button" className="btn btn-danger btn-sm">
+                <button type="button" className="btn btn-danger btn-sm" onClick={()=>delProducto(producto)}>
                   Eliminar
                 </button>
                 <hr />

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import data from '../../data/data'
 import { Link } from "react-router-dom";
 
+
+
 const initialExpiration = () => {
     const fActual = new Date();
     const limite = data.length;

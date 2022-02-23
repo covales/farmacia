@@ -17,7 +17,7 @@ const ListProduct = () => {
   const [productos, setProductos] = useState([]);
   const [productsearch, setProductsearch] = useState([]);
 
-  let api = helpHttp();
+ // let api = helpHttp();
   let urlProductos = "http://localhost:5000/productos";
 
   const getProductos = async () => {

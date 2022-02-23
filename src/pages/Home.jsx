@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import styled from 'styled-components'
 import AsideReport from '../components/aside/AsideReport'
 import Header from '../components/header/Header'
@@ -8,10 +8,11 @@ import ListProduct from '../components/product/ListProduct'
 
 
 const Home = () => {
-    
+   
     return (
         <>
-            <Navbar></Navbar>
+           
+            <Header></Header>
             <main className='container pt-5'>
                 <div className="row">
                     <div className="col-md-4"><AsideReport /></div>
