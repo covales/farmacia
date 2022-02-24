@@ -28,12 +28,12 @@ const ListVentas = () => {
   return (
     <>
       <Header></Header>
-      <div className="container  pt-5">
+      <div className="container-fluid  pt-5">
         <br />
-        <div className="row">
+        <div className="row justify-content-center">
           {ventas.map((venta) => {
             let producto = venta["productos"];
-            let ventaFecha= new Date(venta.fecha);
+            let ventaFecha = new Date(venta.fecha);
             const año = ventaFecha.getFullYear();
             const dia = ventaFecha.getDate();
             const mes = ventaFecha.getMonth() + 1;
@@ -41,24 +41,25 @@ const ListVentas = () => {
 
             return (
               <div
-                className="col-md-4 card  border-success me-2 "
+                className="col-md-4 col-lg-2 card  border-success me-2 mb-1"
                 key={venta.id}
               >
-                <div className="card-header bg-transparent border-success">Fecha de venta: {dia +"/"+ mes +"/"+ año }</div>
+                <div className="card-header bg-transparent border-success text-danger">
+                  Fecha de venta: {dia + "/" + mes + "/" + año}
+                </div>
                 <div className="card-body">
-                  <h5 className="card-title">Productos Vendidos:</h5>
-                  
-                    {producto.map((p) => {
-                      return (
-                        <ul className="list-group list-group-flush" key={p.id}>
-                          <li className="list-group-item">{p.nombre}</li>
-                        </ul>
-                      );
-                    })}
-                  
+                  <h6 className="card-title text-primary">Productos Vendidos:</h6>
+
+                  {producto.map((p) => {
+                    return (
+                      <ul className="list-group list-group-flush" key={p.id}>
+                        <li className="list-group-item">{p.nombre}</li>
+                      </ul>
+                    );
+                  })}
                 </div>
                 <div className="card-footer  text-center bg-transparent border-success">
-                 <h3>total : {venta.totalVenta} bs</h3> 
+                  <h6 className="text-primary">total : {venta.totalVenta} bs</h6>
                 </div>
               </div>
             );
